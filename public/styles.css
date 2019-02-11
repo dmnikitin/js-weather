@@ -1,0 +1,219 @@
+* {
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+    outline: 0 !important;
+}
+
+body {
+    background-color: #82817D  ;
+    font-family: "Arsenal";
+    color: white;
+    text-align: center;
+}
+
+#container {
+    background-color: white;
+    width: 70%;
+    max-width: 700px;
+    margin: 10% auto 10% auto;
+    font-size: 18px;
+    text-align: justify;
+    border-top: 1px solid white;
+    border-radius: 15px;
+}
+
+#navbar {
+    height: 50px;
+    border: 1px solid white;
+    border-radius: 15px 15px 0px 0px;
+    padding-top: 15px;
+    padding-left: 20px;
+    font-size: 16px;
+}
+
+#mainbox {
+    height: 400px;
+    background-color: #363636 ;
+    z-index: 100;
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    padding: 25px;
+}
+
+#mainbox-txt {
+    text-align: left;
+    font-size: 25px;
+    margin: 0 auto;
+    width:100%;
+    height: 200px;
+    margin: 75px 0;
+}
+
+#mainbox-txt h3 {
+    padding: 5px;
+}
+
+#iconZ {
+    margin: 0 auto;
+}
+
+#navbtn {
+    height: 50px;
+    width: 100%;
+    background-color: white;
+    font-family: "Arsenal";
+    font-size: 16px;
+    color: grey;
+    border-radius: 0px 0px 15px 15px;
+    border-color: transparent;
+}
+
+
+.dailyView-opened {
+   
+    opacity: 1;
+    transition-property: all;
+    transition-duration: 1s;
+    transition-timing-function: ease-out;
+    background-color: #363636;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: none;
+    border-top: 3px solid white;
+}
+
+.dailyView-closed {  
+   opacity:0;
+}
+
+.weekly {
+    padding: 15px;
+    color: white;
+    height: 120px;
+}
+
+.weekly canvas {
+    margin: 0 auto;
+    width: 50%;
+    display: block;    
+}
+
+.weekly h6 {
+    text-align: center;
+}
+
+.data-loading {
+    position: relative;
+    left: 55%;
+    top: 27%;
+    height: 200px;
+    width: 200px;
+    text-align: center;
+    font-size: 5em;
+}
+
+
+
+@media (max-width: 575px) {
+
+    #container {
+        width: 100%;
+        height: 100%;
+    }
+
+    #mainbox {
+        height: 280px;
+    }
+
+    #mainbox canvas {
+        height: 150px;
+        width: 150px;
+    }
+
+
+    #mainbox-txt {
+        font-size: 20px;
+         height: 150px;
+        margin: 25px 0; 
+    }
+
+    .weekly {
+        font-size: 15px;
+        height: 90px;
+        padding: 12px 5px 10px 5px;
+    }
+
+    .weekly canvas {
+        margin-left: 30%;
+        height: 35px;
+        width: 35px;
+        padding: 0;
+    }
+
+
+    .data-loading {
+        position: absolute;
+        left: 38%;
+        top: 18%;
+        height: 100px;
+        width: 100px;
+        text-align: center;
+        font-size: 3em;
+    }
+
+}
+
+
+
+@media (min-width: 575px) and (max-width: 880px) {
+
+    #container {
+        background-color: white;
+        width: 70%;
+        font-size: 18px;
+        text-align: justify;
+        border-top: 1px solid white;
+        border-radius: 15px;
+    }
+
+    #mainbox {
+        height: 300px;
+    }
+
+    #mainbox canvas {
+        height: 250px;
+        width: 250px;
+    }
+
+    #mainbox-txt {
+        font-size: 20px;
+        height: 150px;
+        margin: 50px 0;   
+        padding-top: 25px; 
+    }
+
+
+    .weekly {
+        font-size: 15px;
+        text-align: center;
+        padding: 5px;
+        height: 100px;
+    }
+
+    .weekly canvas {
+        height: 50px;
+        width: 50px;
+        padding: 0px;    
+    }
+
+    .data-loading {
+        position: absolute;
+        left: 43%;
+        top: 27%;
+        height: 100px;
+        width: 100px;
+        text-align: center;
+        font-size: 3em;
+    }
+
+}
