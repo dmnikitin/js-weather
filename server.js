@@ -1,8 +1,5 @@
 
 const API_KEY = process.env['API_KEY'];
-console.log(API_KEY);
-console.log(process.env['var API_KEY']);
-console.log(process.env);
 const fetch = require('node-fetch');
 const path = require('path');
 const express = require('express');
