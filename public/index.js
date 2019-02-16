@@ -80,7 +80,8 @@ const weatherWidget = (function() {
        
         fetch("/", myInit)
                 .then(response => {
-                    if (response.ok) {                        
+                    if (response.ok) {   
+                     // console.log(response.text())                     
                         return response.clone().json();
                     }
                     throw new Error('failed')
