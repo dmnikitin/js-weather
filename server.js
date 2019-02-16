@@ -1,5 +1,8 @@
 
-const API_KEY = require('./.env');
+ // const API_KEY = require('./.env');
+
+ console.log( process.env.API_KEY)
+ const API_KEY = process.env.API_KEY;
 const fetch = require('node-fetch');
 const path = require('path');
 const express = require('express');
@@ -13,11 +16,11 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 app.use(express.static(dir));
 
-// app.get('/', (req, res) => {
-//   // res.sendFile(path.resolve(dir, "index.html"));
-//   console.log(dir + '/index.html')
-//   res.render(dir + '/index.html');
-// });
+app.get('/', (req, res) => {
+  // res.sendFile(path.resolve(dir, "index.html"));
+  console.log(dir + '/index.html')
+  res.render(dir + '/index.html');
+});
 
 
 let url, longitude, latitude;
@@ -33,6 +36,8 @@ app.post('/', (req, res) => {
 
 	fetch(url).then(response => {
         if (response.ok) {
+            // console.log(response.text())
+            // console.log(response)
             return response.json();
         }
         throw new Error('failed')
