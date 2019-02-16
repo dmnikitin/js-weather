@@ -1,33 +1,25 @@
-
- // const API_KEY = require('./.env');
-
- console.log( process.env.API_KEY)
- const API_KEY = process.env.API_KEY;
+// const API_KEY = require('./.env');
+const API_KEY = process.env['var API_KEY'];
 const fetch = require('node-fetch');
 const path = require('path');
 const express = require('express');
 const bodyParser = require('body-parser');
 const port = process.env.PORT || 8080;
 const dir = path.join(__dirname, 'public');
-
 const app = express();
-app.use(bodyParser.urlencoded({ extended: true }));
-
-
-app.use(express.static(dir));
-
-app.get('/', (req, res) => {
-  // res.sendFile(path.resolve(dir, "index.html"));
-  console.log(dir + '/index.html')
-  res.render(dir + '/index.html');
-});
-
-
 let url, longitude, latitude;
 
+app.use(bodyParser.urlencoded({ extended: true }));
+app.use(express.static(dir));
+
+// app.get('/', (req, res) => {
+//   // res.sendFile(path.resolve(dir, "index.html"));
+//   console.log(dir + '/index.html')
+//   res.render(dir + '/index.html');
+// });
+
 app.post('/', (req, res) => {	
-	console.log(req.body)
-    latitude = req.body.latitude;
+	latitude = req.body.latitude;
     longitude = req.body.longitude;
    	url = `https://api.darksky.net/forecast/${API_KEY}/${latitude},${longitude}`;
 	if(!latitude || !longitude) {
@@ -36,17 +28,12 @@ app.post('/', (req, res) => {
 
 	fetch(url).then(response => {
         if (response.ok) {
-            // console.log(response.text())
-            // console.log(response)
             return response.json();
         }
         throw new Error('failed')
     }, networkError => console.log(networkError.message))
-    .then(jsonResponse => res.json(jsonResponse))          
-
+    .then(jsonResponse => res.json(jsonResponse))
 });
-
-
 
 app.listen(port, () => console.log(`Listening on http://localhost:${port}/`));
 
