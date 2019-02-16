@@ -1,4 +1,4 @@
-// const API_KEY = require('./.env');
+
 const API_KEY = process.env['var API_KEY'];
 const fetch = require('node-fetch');
 const path = require('path');
@@ -11,12 +11,6 @@ let url, longitude, latitude;
 
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static(dir));
-
-// app.get('/', (req, res) => {
-//   // res.sendFile(path.resolve(dir, "index.html"));
-//   console.log(dir + '/index.html')
-//   res.render(dir + '/index.html');
-// });
 
 app.post('/', (req, res) => {	
 	latitude = req.body.latitude;
