@@ -50,7 +50,7 @@ const weatherWidget = (function() {
             theme ? body.style.backgroundColor= "#3F4551" : body.style.backgroundColor= "#878D8B"; 
             theme ? skycons.color= "black" : skycons.color= "white"; 
             theme ? mainbox.style.backgroundColor = "#878D8B" : mainbox.style.backgroundColor = "#3F4551";
-            theme ? dailyView.style.backgroundColor = "#E4DFD9" : dailyView.style.backgroundColor = "#363636";
+            theme ? dailyView.style.backgroundColor = "#CAC8BB" : dailyView.style.backgroundColor = "#363636";
             theme ? mainbox.style.color = "black" : mainbox.style.color = "white"
             theme ? dailyView.style.color = "black" : dailyView.style.color = "white"
             theme = !theme;            
