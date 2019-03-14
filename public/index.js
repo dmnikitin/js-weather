@@ -1,13 +1,15 @@
 const weatherWidget = (function() {
-
+    const body = document.getElementsByTagName("BODY")[0];
     const navbar = document.getElementById('navbar');
     const canvas = document.getElementById('iconZ');
     const mainbox = document.getElementById('mainbox');
     const button = document.getElementById("navbtn");
+    const themeButton = document.getElementById("theme");
     const dailyView = document.getElementById("dailyView");
     const skycons = new Skycons({ "color": "white" });
     let requestedData;
     let daily = false;
+    let theme = true;
 
     const enabledPosition = position => {
 
@@ -41,6 +43,14 @@ const weatherWidget = (function() {
                 dailyView.classList.add("dailyView-closed");
                 dailyView.innerHTML = "";
             }
+        })
+
+        themeButton.addEventListener("click", () => {
+            
+            theme ? body.style.backgroundColor= "#3F4551" : body.style.backgroundColor= "#878D8B"; 
+            theme ? skycons.color= "white" : skycons.color= "black"; 
+            theme ? mainbox.style.backgroundColor = "#878D8B" : mainbox.style.backgroundColor = "#3F4551"
+            theme = !theme;            
         })
 
 

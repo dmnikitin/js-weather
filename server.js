@@ -7,10 +7,16 @@ const bodyParser = require('body-parser');
 const port = process.env.PORT || 8080;
 const dir = path.join(__dirname, 'public');
 const app = express();
+const cors = require('cors')
 let url, longitude, latitude;
 
+app.use(cors())
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static(dir));
+
+app.get('/loadserver', (req, res) => {
+  res.send('<h1>server running</h1>');
+});
 
 app.post('/', (req, res) => {	
 	latitude = req.body.latitude;

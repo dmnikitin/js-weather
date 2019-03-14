@@ -5,7 +5,7 @@
 }
 
 body {
-    background-color: #82817D  ;
+    background-color: #878D8B   ;
     font-family: "Arsenal";
     color: white;
     text-align: center;
@@ -33,7 +33,7 @@ body {
 
 #mainbox {
     height: 400px;
-    background-color: #363636 ;
+    background-color: #3F4551 ;
     z-index: 100;
     display: grid;
     grid-template-columns: 2fr 1fr;
@@ -57,9 +57,9 @@ body {
     margin: 0 auto;
 }
 
-#navbtn {
+#navbtn, #theme {
     height: 50px;
-    width: 100%;
+    width: 49%;
     background-color: white;
     font-family: "Arsenal";
     font-size: 16px;
@@ -67,7 +67,6 @@ body {
     border-radius: 0px 0px 15px 15px;
     border-color: transparent;
 }
-
 
 .dailyView-opened {
    
