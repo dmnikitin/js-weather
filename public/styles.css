@@ -68,6 +68,10 @@ body {
     border-color: transparent;
 }
 
+#dailyView {
+    color: white;
+}
+
 .dailyView-opened {
    
     opacity: 1;
@@ -86,8 +90,7 @@ body {
 }
 
 .weekly {
-    padding: 15px;
-    color: white;
+    padding: 15px;    
     height: 120px;
 }
 
