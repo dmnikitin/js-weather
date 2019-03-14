@@ -47,8 +47,9 @@ const weatherWidget = (function() {
 
         themeButton.addEventListener("click", () => {
             
+            font color
             theme ? body.style.backgroundColor= "#3F4551" : body.style.backgroundColor= "#878D8B"; 
-            theme ? skycons.color= "white" : skycons.color= "black"; 
+            theme ? skycons.color= "black" : skycons.color= "white"; 
             theme ? mainbox.style.backgroundColor = "#878D8B" : mainbox.style.backgroundColor = "#3F4551"
             theme = !theme;            
         })
