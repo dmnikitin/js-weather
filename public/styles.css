@@ -1,103 +1,100 @@
 * {
     box-sizing: border-box;
-    scroll-behavior: smooth;
+    margin: 0;
+    padding: 0;
     outline: 0 !important;
 }
 
 body {
-    background-color: #878D8B   ;
-    font-family: "Arsenal";
     color: white;
+    background-color: #878D8B;
+    font-family: "Arsenal";
     text-align: center;
 }
 
 #container {
-    background-color: white;
     width: 70%;
     max-width: 700px;
-    margin: 10% auto 10% auto;
-    font-size: 18px;
-    text-align: justify;
+    margin: 10% auto;
     border-top: 1px solid white;
     border-radius: 15px;
+    background-color: white;
+    font-size: 18px;
+    text-align: justify;
 }
 
 #navbar {
     height: 50px;
-    border: 1px solid white;
-    border-radius: 15px 15px 0px 0px;
     padding-top: 15px;
     padding-left: 20px;
+    border: 1px solid white;
+    border-radius: 15px 15px 0px 0px;
     font-size: 16px;
 }
 
 #mainbox {
-    height: 400px;
-    background-color: #3F4551 ;
-    z-index: 100;
     display: grid;
-    grid-template-columns: 2fr 1fr;
+    z-index: 100;
+    height: 400px;
     padding: 25px;
+    background-color: #3F4551;
+    grid-template-columns: 2fr 1fr;
 }
 
 #mainbox-txt {
-    text-align: left;
-    font-size: 25px;
-    margin: 0 auto;
-    width:100%;
+    width: 100%;
     height: 200px;
     margin: 75px 0;
+    font-size: 25px;
+    text-align: left;
 }
 
 #mainbox-txt h3 {
     padding: 5px;
 }
 
-#iconZ {
+#mainWeatherIcon {
     margin: 0 auto;
 }
 
-#navbtn, #theme {
-    height: 50px;
+#dailyViewButton,
+#themeButton {
     width: 49%;
+    height: 50px;
+    border-color: transparent;
+    border-radius: 0px 0px 15px 15px;
+    color: grey;
     background-color: white;
     font-family: "Arsenal";
     font-size: 16px;
-    color: grey;
-    border-radius: 0px 0px 15px 15px;
-    border-color: transparent;
 }
 
-#dailyView {
+.dailyViewBox {
+    opacity: 0;
     color: white;
 }
 
-.dailyView-opened {
-   
-    opacity: 1;
-    transition-property: all;
-    transition-duration: 1s;
-    transition-timing-function: ease-out;
-    background-color: #363636;
+.dailyViewBox-opened {
     display: grid;
+    border-top: 3px solid white;
+    opacity: 1;
+    background-color: #363636;
+    transition-timing-function: ease-out;
+    transition-duration: 1s;
+    transition-property: all;
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
     grid-template-rows: none;
-    border-top: 3px solid white;
-}
-
-.dailyView-closed {  
-   opacity:0;
 }
 
 .weekly {
-    padding: 15px;    
     height: 120px;
+    padding: 15px;
 }
 
 .weekly canvas {
-    margin: 0 auto;
+    display: block;
     width: 50%;
-    display: block;    
+    margin: 0 auto;
 }
 
 .weekly h6 {
@@ -106,14 +103,13 @@ body {
 
 .data-loading {
     position: relative;
-    left: 55%;
     top: 27%;
-    height: 200px;
+    left: 55%;
     width: 200px;
-    text-align: center;
+    height: 200px;
     font-size: 5em;
+    text-align: center;
 }
-
 
 
 @media (max-width: 575px) {
@@ -128,94 +124,78 @@ body {
     }
 
     #mainbox canvas {
-        height: 150px;
         width: 150px;
+        height: 150px;
     }
 
-
     #mainbox-txt {
+        height: 150px;
+        margin: 25px 0;
         font-size: 20px;
-         height: 150px;
-        margin: 25px 0; 
     }
 
     .weekly {
-        font-size: 15px;
         height: 90px;
         padding: 12px 5px 10px 5px;
+        font-size: 15px;
     }
 
     .weekly canvas {
-        margin-left: 30%;
-        height: 35px;
         width: 35px;
+        height: 35px;
+        margin-left: 30%;
         padding: 0;
     }
 
-
     .data-loading {
         position: absolute;
-        left: 38%;
         top: 18%;
-        height: 100px;
+        left: 38%;
         width: 100px;
-        text-align: center;
+        height: 100px;
         font-size: 3em;
+        text-align: center;
     }
-
 }
 
-
-
 @media (min-width: 575px) and (max-width: 880px) {
-
-    #container {
-        background-color: white;
-        width: 70%;
-        font-size: 18px;
-        text-align: justify;
-        border-top: 1px solid white;
-        border-radius: 15px;
-    }
 
     #mainbox {
         height: 300px;
     }
 
     #mainbox canvas {
-        height: 250px;
         width: 250px;
+        height: 250px;
     }
 
     #mainbox-txt {
-        font-size: 20px;
         height: 150px;
-        margin: 50px 0;   
-        padding-top: 25px; 
+        margin: 50px 0;
+        padding-top: 25px;
+        font-size: 20px;
     }
 
-
     .weekly {
+        height: 100px;
+        padding: 5px;
         font-size: 15px;
         text-align: center;
-        padding: 5px;
-        height: 100px;
     }
 
     .weekly canvas {
-        height: 50px;
         width: 50px;
-        padding: 0px;    
+        height: 50px;
+        padding: 0px;
     }
 
     .data-loading {
         position: absolute;
-        left: 43%;
         top: 27%;
-        height: 100px;
+        left: 43%;
         width: 100px;
-        text-align: center;
+        height: 100px;
         font-size: 3em;
+        text-align: center;
     }
-
 }

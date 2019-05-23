@@ -1,28 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1">
-    <title>Weather widget</title>
-    <link rel="stylesheet" href="./reset.css">
-    <link rel="stylesheet" href="./styles.css">
-    <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Arsenal'>  
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-</head>
-<body>
-    <div id="container">
-        <div id="navbar"> </div>
-        <div id="mainbox">
-            <div class="data-loading"><i class='fa fa-refresh fa-spin'></i></div>           
+
+    <head>
+        <meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1">
+        <title>Weather widget</title>
+        <link rel="stylesheet" href="./reset.css">
+        <link rel="stylesheet" href="./styles.css">
+        <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Arsenal'>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    </head>
+
+    <body>
+        <div id="container">
+            <div id="navbar"> </div>
+            <div id="mainbox">
+                <div class="data-loading"><i class='fa fa-refresh fa-spin'></i></div>
+            </div>
+            <div class="dailyViewBox"></div>
+            <button id="dailyViewButton" type="submit">
+                toggle daily view
+            </button>
+            <button id="themeButton" type="submit">
+                toggle theme
+            </button>
         </div>
-        <div id="dailyView"></div>
-        <button id="navbtn" type="submit">
-            toggle view
-        </button>  
-        <button id="theme" type="submit">
-            toggle theme
-        </button>     
-    </div>
-    <script src="https://rawgithub.com/darkskyapp/skycons/master/skycons.js"></script>
-    <script type="text/javascript" src="index.js"></script>   
-</body>
+        <script src="https://rawgithub.com/darkskyapp/skycons/master/skycons.js"></script>
+        <script type="text/javascript" src="index.js"></script>
+    </body>
+
 </html>
